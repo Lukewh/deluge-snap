@@ -1,0 +1,37 @@
+name: deluge-lukewh
+version: 2.0.3
+summary: Torrents
+description: Torrents
+
+base: core18
+grade: stable
+confinement: strict
+
+parts:
+  deluge:
+    plugin: python
+    source: git://deluge-torrent.org/deluge.git
+    source-tag: deluge-2.0.3
+    requirements:
+      - requirements.txt
+    stage-packages:
+      - python3-libtorrent
+  
+
+apps:
+  #deluge:
+  #  command: bin/deluge
+  deluged:
+    command: bin/deluged
+    plugs:
+      - network
+      - network-bind
+  #deluge-console:
+  #  command: bin/deluge-console
+  deluge-web:
+    command: bin/deluge-web
+    plugs:
+      - network
+      - network-bind
+  #deluge-gtk:
+  #  command: bin/deluge-gtk
