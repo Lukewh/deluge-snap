@@ -16,20 +16,25 @@ parts:
       - requirements.txt
     stage-packages:
       - python3-libtorrent
-  
+  launcher:
+    plugin: nil
+    source: .
+    override-build: |
+      mkdir -p $SNAPCRAFT_PART_INSTALL/bin
+      cp -av launcher.sh $SNAPCRAFT_PART_INSTALL/bin
 
 apps:
   #deluge:
   #  command: bin/deluge
   deluged:
-    command: bin/deluged
+    command: launcher.sh deluged
     plugs:
       - network
       - network-bind
   #deluge-console:
   #  command: bin/deluge-console
   deluge-web:
-    command: bin/deluge-web
+    command: launcher.sh deluge-web
     plugs:
       - network
       - network-bind
