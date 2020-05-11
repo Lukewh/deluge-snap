@@ -36,6 +36,12 @@ apps:
       - network
       - network-bind
       - removable-media
+  deluge-web-service:
+    command: launcher.sh deluge-web
+    daemon: simple
+    plugs:
+      - network
+      - network-bind
   deluged:
     command: launcher.sh deluged
     plugs:
