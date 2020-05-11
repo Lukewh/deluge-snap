@@ -41,5 +41,6 @@ apps:
     plugs:
       - network
       - network-bind
+      - removable-media
   #deluge-gtk:
   #  command: bin/deluge-gtk
