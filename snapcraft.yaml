@@ -29,11 +29,18 @@ parts:
       cp -av launcher.sh $SNAPCRAFT_PART_INSTALL/bin
 
 apps:
+  deluged-service:
+    command: launcher.sh deluged
+    plugs:
+      - network
+      - network-bind
+      - removable-media
   deluged:
     command: launcher.sh deluged
     plugs:
       - network
       - network-bind
+      - removable-media
   #deluge-console:
   #  command: bin/deluge-console
   deluge-web:
@@ -41,6 +48,5 @@ apps:
     plugs:
       - network
       - network-bind
-      - removable-media
   #deluge-gtk:
   #  command: bin/deluge-gtk
