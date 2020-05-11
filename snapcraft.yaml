@@ -31,6 +31,7 @@ parts:
 apps:
   deluged-service:
     command: launcher.sh deluged
+    daemon: simple
     plugs:
       - network
       - network-bind
