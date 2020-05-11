@@ -30,14 +30,14 @@ parts:
 
 apps:
   deluged-service:
-    command: launcher.sh deluged
+    command: deluged
     daemon: simple
     plugs:
       - network
       - network-bind
       - removable-media
   deluge-web-service:
-    command: launcher.sh deluge-web
+    command: deluge-web
     daemon: simple
     plugs:
       - network
