@@ -38,6 +38,6 @@ else
     mkdir -p "$COMMON_CONFIGS_DIR"
 fi
 
-echo "$COMMAND" -c "$COMMON_CONFIGS_DIR/"
+echo "$COMMAND" -c "$COMMON_CONFIGS_DIR/" -d
 
-exec "$COMMAND" -c "$COMMON_CONFIGS_DIR/"
+exec "$COMMAND" -c "$COMMON_CONFIGS_DIR/" -d
