@@ -3,7 +3,7 @@ version: 2.0.5
 summary: Torrents
 description: Torrents
 
-base: core18
+base: core20
 grade: stable
 confinement: strict
 
@@ -12,11 +12,6 @@ architectures:
       - amd64
       - armhf
       - arm64
-  - run-on:
-      - amd64
-      - armhf
-      - arm64
-      
 
 parts:
   deluge:
@@ -34,6 +29,8 @@ parts:
     override-build: |
       mkdir -p $SNAPCRAFT_PART_INSTALL/bin
       cp -av launcher.sh $SNAPCRAFT_PART_INSTALL/bin
+    organize:
+      "$SNAPCRAFT_PART_INSTALL/bin/launcher.sh": ./
 
 apps:
   deluged-service:
