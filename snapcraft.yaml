@@ -1,5 +1,5 @@
 name: deluge-lukewh
-version: 2.0.3
+version: 2.0.5
 summary: Torrents
 description: Torrents
 
@@ -15,7 +15,7 @@ parts:
   deluge:
     plugin: python
     source: git://deluge-torrent.org/deluge.git
-    source-tag: deluge-2.0.3
+    source-tag: deluge-2.0.5
     requirements:
       - requirements.txt
     stage-packages:
