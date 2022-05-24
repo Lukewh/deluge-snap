@@ -3,7 +3,7 @@ version: 2.0.5
 summary: Torrents
 description: Torrents
 
-base: core20
+base: core18
 grade: stable
 confinement: strict
 
@@ -23,8 +23,6 @@ parts:
     override-build: |
       mkdir -p $SNAPCRAFT_PART_INSTALL/bin
       cp -av launcher.sh $SNAPCRAFT_PART_INSTALL/bin
-    organize:
-      "$SNAPCRAFT_PART_INSTALL/bin/launcher.sh": ./
 
 apps:
   deluged-service:
